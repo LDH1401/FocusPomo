@@ -29,9 +29,10 @@ jobs:
       - run: npm ci
       - run: npm run build
 
+      # Pages đã bật sẵn ở Settings → Pages → Source: GitHub Actions.
+      # Không dùng `enablement: true` vì thao tác bật Pages cần quyền admin
+      # mà GITHUB_TOKEN của workflow không có.
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:
